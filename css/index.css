@@ -6,6 +6,19 @@ body {
 /* 登入介面 */
 .loginCard{
 padding: 30px;
+overflow: auto; /* 加上捲軸，以防內容超出高度 */
+}
+@media screen and (max-width: 760px) {
+  .loginCard {
+    max-width: 100%; /* 手機螢幕上的最大寬度為 100% */
+    padding: 10px; /* 可以根據需求調整內邊距 */
+    height: auto; /* 手機螢幕上的高度自動調整 */
+  }
+
+  .buttomBox {
+    flex-direction: column; /* 在手機螢幕上按鈕垂直排列 */
+    align-items: center; /* 水平置中 */
+  }
 }
 .modal {
   /* display: none; Hidden by default */
@@ -29,8 +42,9 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
 .buttomBox{
-    display: flex;
-    /* align-items: center; */
+  display: flex; /* 將按鈕放在同一行 */
+  justify-content: space-between; /* 將按鈕水平分開 */
+  height: auto; /* 讓高度自動調整 */
 }
 button {
   background-color: #04aa6d;
@@ -250,7 +264,19 @@ margin-bottom: 20px;
 }
 
 /* footer */
+@media screen and (max-width: 550px) {
+  .footer{
+    max-width: 100%; /* 手機螢幕上的最大寬度為 100% */
+    padding: 10px; /* 可以根據需求調整內邊距 */
+    
+  }
 
+  .fanBtn{
+    flex-direction: column; /* 在手機螢幕上按鈕垂直排列 */
+    align-items: center; /* 水平置中 */
+    gap: 10px;
+  }
+}
 .footer {
   /* height: 10vh; */
   background-color: #a70719;
@@ -259,10 +285,12 @@ margin-bottom: 20px;
 .footerBox {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin: 10px;
   color: white;
   font-size: 20px;
   font-weight: bold;
+  justify-content: center;
 }
 .footerBox img {
   height: 40px;
@@ -286,6 +314,8 @@ margin-bottom: 20px;
 .fanBtn{
   display: flex;
   margin-bottom: 20px;
+  padding-left: 110px;
+  
 
 }
 .facebook ,.twitter,.instagram,.line{
